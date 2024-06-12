@@ -1,0 +1,60 @@
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de configuração
+.env
+*.local.php
+*.local.yml
+*.local.yaml
+
+# Dependências do Composer
+/vendor/
+
+# Cache e logs
+/cache/
+/logs/
+
+# Arquivos temporários
+/tmp/
+/temp/
+
+# Diretório de upload (se existir)
+/uploads/
+
+# Configurações do editor
+.vscode/
+.idea/
+
+# Arquivos do PHPUnit
+.phpunit.result.cache
+
+# Arquivos gerados pelo Composer
+composer.phar
+composer.lock
+
+# Dependências do Node.js (se houver)
+node_modules/
+
+# Arquivos gerados pelo PHPStorm
+*.iml
+.idea/
+*.ipr
+*.iws
+
+# Configurações específicas do sistema operacional
+*.swp
+*.swo
+
+# Backup
+*.bak
+*.old
+
+# Arquivos ocultos do macOS
+._*
+
+# Arquivos de build
+/build/
+
+# Arquivos gerados pelo IDE
+/.vscode/
