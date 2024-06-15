@@ -14,6 +14,7 @@ error_reporting(E_ALL);
 <body>
     <h1>Teste</h1>
     <p>Teste</p>
+    <a href="login.php">Login</a>
 
     <?php
     echo "<p>teste.</p>";
