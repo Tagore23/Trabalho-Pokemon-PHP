@@ -38,4 +38,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <label for="nome">Nome:</label>
     <input type="text" id="nome" name="nome" value="<?php echo $pokemon['nome']; ?>" required>
     <label for="habilidade1">Habilidade 1:</label>
-    <input type="text" id="habilidade1" name="habilidade1" value="<?php echo $pokemon['habilidade1']; ?>" required
+    <input type="text" id="habilidade1" name="habilidade1" value="<?php echo $pokemon['habilidade1']; ?>" required>
