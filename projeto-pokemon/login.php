@@ -29,4 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input type="password" id="password" name="password" required>
     <button type="submit">Login</button>
 </form>
+
+
+
 <?php include 'includes/footer.php'; ?>
