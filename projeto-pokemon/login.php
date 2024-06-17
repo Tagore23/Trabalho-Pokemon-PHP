@@ -1,6 +1,6 @@
 <?php
-require 'conexao.php';
 session_start();
+$pdo = require 'conexao.php'; // Inclua o arquivo de conexão e atribua o retorno à variável $pdo
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -29,7 +29,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input type="password" id="password" name="password" required>
     <button type="submit">Login</button>
 </form>
-
-
-
 <?php include 'includes/footer.php'; ?>

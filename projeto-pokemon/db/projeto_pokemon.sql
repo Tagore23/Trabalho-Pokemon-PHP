@@ -30,10 +30,15 @@ SET time_zone = "+00:00";
 CREATE TABLE `pokemons` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
+  `vida` int(11) NOT NULL,
   `habilidade1` varchar(50) NOT NULL,
+  `dano1` int(11) NOT NULL,
   `habilidade2` varchar(50) NOT NULL,
+  `dano2` int(11) NOT NULL,
   `habilidade3` varchar(50) NOT NULL,
+  `dano3` int(11) NOT NULL,
   `habilidade4` varchar(50) NOT NULL,
+  `dano4` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -41,11 +46,11 @@ CREATE TABLE `pokemons` (
 -- Despejando dados para a tabela `pokemons`
 --
 
-INSERT INTO `pokemons` (`id`, `nome`, `habilidade1`, `habilidade2`, `habilidade3`, `habilidade4`, `usuario_id`) VALUES
-(1, 'Charmander', 'fogo', 'bola de fogo', 'rajada de fogo', 'fogareu', 1),
-(2, 'Pikachu', 'raio ', 'raio 2 ', 'raio 3', 'raio 4', 1),
-(3, 'Charizard', 'fogo1', 'fogo2', 'fogo3', 'fogo4', 2),
-(4, 'Charizard', '', '', '', '', 1);
+INSERT INTO `pokemons` (`id`, `nome`, `vida`, `habilidade1`, `dano1`, `habilidade2`, `dano2`, `habilidade3`, `dano3`, `habilidade4`, `dano4`, `usuario_id`) VALUES
+(1, 'Charmander', 100, 'fogo', 10, 'bola de fogo', 20, 'rajada de fogo', 15, 'fogareu', 25, 1),
+(2, 'Pikachu', 80, 'raio', 12, 'raio 2', 18, 'raio 3', 22, 'raio 4', 30, 1),
+(3, 'Charizard', 120, 'fogo1', 14, 'fogo2', 28, 'fogo3', 19, 'fogo4', 35, 2),
+(4, 'Charizard', 130, 'chama', 16, 'incendio', 24, 'labareda', 18, 'fogo5', 27, 1);
 
 -- --------------------------------------------------------
 

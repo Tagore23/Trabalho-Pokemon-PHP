@@ -1,5 +1,5 @@
 <?php
-require 'conexao.php';
+$pdo = require 'conexao.php'; // Inclua o arquivo de conexão e atribua o retorno à variável $pdo
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];

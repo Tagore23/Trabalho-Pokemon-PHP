@@ -4,8 +4,9 @@ if (!isset($_SESSION['usuario_id'])) {
     header('Location: login.php');
     exit;
 }
-require 'conexao.php';
+$pdo = require 'conexao.php';
 $usuario_id = $_SESSION['usuario_id'];
+
 $stmt = $pdo->prepare('SELECT * FROM pokemons WHERE usuario_id = ?');
 $stmt->execute([$usuario_id]);
 $pokemons = $stmt->fetchAll();
@@ -44,10 +45,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->execute([$pokemon2_id]);
     $pokemon2 = $stmt->fetch();
 
-    // Simulação básica de combate
+    // Inicializar a vida dos Pokémon
+    $pokemon1_vida = $pokemon1['vida'];
+    $pokemon2_vida = $pokemon2['vida'];
+
+    // Alternar ataques
+    $turno = 0;
     echo "<h2>Combate entre {$pokemon1['nome']} e {$pokemon2['nome']}</h2>";
-    $vencedor = rand(0, 1) ? $pokemon1['nome'] : $pokemon2['nome'];
-    echo "<h3>O vencedor é: $vencedor</h3>";
+    while ($pokemon1_vida > 0 && $pokemon2_vida > 0) {
+        if ($turno % 2 == 0) {
+            // Pokémon 1 ataca
+            $habilidade = "habilidade" . rand(1, 4);
+            $dano = $pokemon1["dano" . substr($habilidade, -1)];
+            $pokemon2_vida -= $dano;
+            echo "<p>{$pokemon1['nome']} usou {$pokemon1[$habilidade]} causando $dano de dano. Vida do {$pokemon2['nome']}: $pokemon2_vida</p>";
+        } else {
+            // Pokémon 2 ataca
+            $habilidade = "habilidade" . rand(1, 4);
+            $dano = $pokemon2["dano" . substr($habilidade, -1)];
+            $pokemon1_vida -= $dano;
+            echo "<p>{$pokemon2['nome']} usou {$pokemon2[$habilidade]} causando $dano de dano. Vida do {$pokemon1['nome']}: $pokemon1_vida</p>";
+        }
+        $turno++;
+    }
+
+    // Determinar o vencedor
+    if ($pokemon1_vida > 0) {
+        echo "<h3>O vencedor é: {$pokemon1['nome']}</h3>";
+    } else {
+        echo "<h3>O vencedor é: {$pokemon2['nome']}</h3>";
+    }
 }
 ?>
 
