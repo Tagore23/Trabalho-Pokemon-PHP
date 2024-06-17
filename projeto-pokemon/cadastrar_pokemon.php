@@ -29,28 +29,51 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <?php include 'includes/header.php'; ?>
+<style>
+    .form-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .form-group label {
+        margin-right: 10px;
+    }
+
+    .form-group input {
+        margin-right: 10px;
+    }
+</style>
 <h2>Cadastrar Pokémon</h2>
 <form method="POST">
     <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required>
+    <input type="text" id="nome" name="nome" required><br>
     <label for="vida">Vida:</label>
-    <input type="number" id="vida" name="vida" required>
-    <label for="habilidade1">Habilidade 1:</label>
-    <input type="text" id="habilidade1" name="habilidade1" required>
-    <label for="dano1">Dano da Habilidade 1:</label>
-    <input type="number" id="dano1" name="dano1" required>
-    <label for="habilidade2">Habilidade 2:</label>
-    <input type="text" id="habilidade2" name="habilidade2" required>
-    <label for="dano2">Dano da Habilidade 2:</label>
-    <input type="number" id="dano2" name="dano2" required>
-    <label for="habilidade3">Habilidade 3:</label>
-    <input type="text" id="habilidade3" name="habilidade3" required>
-    <label for="dano3">Dano da Habilidade 3:</label>
-    <input type="number" id="dano3" name="dano3" required>
-    <label for="habilidade4">Habilidade 4:</label>
-    <input type="text" id="habilidade4" name="habilidade4" required>
-    <label for="dano4">Dano da Habilidade 4:</label>
-    <input type="number" id="dano4" name="dano4" required>
+    <input type="number" id="vida" name="vida" required><br>
+    <div class="form-group">
+        <label for="habilidade1">Habilidade 1:</label>
+        <input type="text" id="habilidade1" name="habilidade1" required>
+        <label for="dano1">Dano da Habilidade 1:</label>
+        <input type="number" id="dano1" name="dano1" required>
+    </div>
+    <div class="form-group">
+        <label for="habilidade2">Habilidade 2:</label>
+        <input type="text" id="habilidade2" name="habilidade2" required>
+        <label for="dano2">Dano da Habilidade 2:</label>
+        <input type="number" id="dano2" name="dano2" required>
+    </div>
+    <div class="form-group">
+        <label for="habilidade3">Habilidade 3:</label>
+        <input type="text" id="habilidade3" name="habilidade3" required>
+        <label for="dano3">Dano da Habilidade 3:</label>
+        <input type="number" id="dano3" name="dano3" required>
+    </div>
+    <div class="form-group">
+        <label for="habilidade4">Habilidade 4:</label>
+        <input type="text" id="habilidade4" name="habilidade4" required>
+        <label for="dano4">Dano da Habilidade 4:</label>
+        <input type="number" id="dano4" name="dano4" required>
+    </div>
     <button type="submit">Cadastrar</button>
 </form>
 <?php include 'includes/footer.php'; ?>

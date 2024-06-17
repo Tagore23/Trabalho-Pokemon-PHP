@@ -1,3 +1,8 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,11 +17,16 @@
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="register.php">Registrar</a></li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="menu.php">Menu</a></li>
-            <li><a href="cadastrar_pokemon.php">Cadastrar Pokémon</a></li>
-            <li><a href="batalhar.php">Batalhar</a></li>
+            <?php if (!isset($_SESSION['usuario_id'])): ?>
+                <li><a href="register.php">Registrar</a></li>
+                <li><a href="login.php">Login</a></li>
+            <?php else: ?>
+                <li><a href="menu.php">Menu</a></li>
+                <li><a href="cadastrar_pokemon.php">Cadastrar Pokémon</a></li>
+                <li><a href="batalhar.php">Batalhar</a></li>
+                <li><a href="logout.php">Logout</a></li>
+                </li>
+            <?php endif; ?>
         </ul>
     </nav>
 </header>

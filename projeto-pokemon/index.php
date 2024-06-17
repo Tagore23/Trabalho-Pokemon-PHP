@@ -43,7 +43,7 @@ error_reporting(E_ALL);
     <p>Projeto de PHP - Grupo: Eduardo Zaduski, Tagore Nataniel, Gabriel Braga, Paulo Victor</p>
     <p>Junho de 2024 - Curso de análise e desenvolvimento de sistemas</p>
     <a href="login.php">Login</a>
-    <a href="register.php">Registrar nova conta</a>
+    <a href="register.php">Nova conta</a>
     <br>
     <br>
     <img src="Battle.jpeg" alt="Batalha Pokemon">
